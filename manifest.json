@@ -1,0 +1,16 @@
+{
+  "name": "野鳥クイックリファレンス",
+  "short_name": "野鳥Ref",
+  "description": "大きさ・色・場所・季節・くちばしから野鳥を絞り込む図鑑",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1a14",
+  "theme_color": "#1f6f8b",
+  "lang": "ja",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

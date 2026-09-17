@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>野鳥クイックリファレンス</title>
+  <meta name="description" content="大きさ・色・場所・季節・くちばしから野鳥を絞り込む図鑑">
+  <meta name="theme-color" content="#0f1a14" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#eef2ec" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="野鳥Ref">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <h1 class="title">野鳥<span class="title-sub">クイックリファレンス</span></h1>
+  <div class="search-row">
+    <input id="search" type="search" placeholder="名前で探す（すずめ / スズメ）" autocomplete="off" enterkeyhint="search" aria-label="種名で検索">
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="表示モード切替" title="表示モード切替">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path class="moon" d="M12 3a9 9 0 1 0 9 9c0-.5 0-1-.1-1.5A6.5 6.5 0 0 1 12.5 3.1 9 9 0 0 0 12 3z" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <p id="status" class="status" aria-live="polite">読み込み中…</p>
+  <section id="grid" class="grid" aria-label="候補一覧"></section>
+  <p id="empty" class="empty" hidden>この条件に合う鳥はありません。<br>条件を減らすか、クリアしてください。</p>
+</main>
+
+<!-- 片手操作用の下部フィルター -->
+<div id="filter-sheet" class="sheet" data-open="false">
+  <button id="sheet-toggle" class="sheet-handle" type="button" aria-expanded="false" aria-controls="sheet-body">
+    <span class="handle-bar" aria-hidden="true"></span>
+    <span id="sheet-summary" class="handle-text">絞り込み</span>
+    <span id="clear-btn" class="handle-clear" role="button" tabindex="0" hidden>クリア</span>
+  </button>
+  <div id="sheet-body" class="sheet-body">
+    <div class="filter-group" data-key="size">
+      <div class="filter-label">大きさ</div>
+      <div class="chips"></div>
+    </div>
+    <div class="filter-group" data-key="colors">
+      <div class="filter-label">色</div>
+      <div class="chips"></div>
+    </div>
+    <div class="filter-group" data-key="habitat">
+      <div class="filter-label">場所</div>
+      <div class="chips"></div>
+    </div>
+    <div class="filter-group" data-key="season">
+      <div class="filter-label">季節</div>
+      <div class="chips"></div>
+    </div>
+    <div class="filter-group" data-key="beak">
+      <div class="filter-label">くちばし</div>
+      <div class="chips"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 詳細モーダル -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+    <button class="modal-close" type="button" data-close aria-label="閉じる">×</button>
+    <div class="modal-photo"><img id="modal-img" alt=""></div>
+    <div class="modal-body">
+      <h2 id="modal-name"></h2>
+      <p id="modal-kana" class="kana"></p>
+      <dl id="modal-attrs" class="attrs"></dl>
+      <h3>特徴</h3>
+      <p id="modal-features"></p>
+      <h3>似ている種</h3>
+      <div id="modal-similar" class="similar"></div>
+    </div>
+  </article>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
