@@ -1,72 +1,97 @@
 # 野鳥クイックリファレンス
 
-大きさ・色・場所・季節・くちばしから野鳥を絞り込む静的Webアプリ。GitHub Pages で公開し、PWA としてホーム画面に追加すれば圏外でも動く。
+大きさ・色・季節・生息地・鳴き声から野鳥を絞り込んで調べられる、GitHub Pages上で動く図鑑Webアプリです。
+撮影中に「これ何の鳥だっけ」となったとき、その場でスマホから調べられます。
 
-## 公開手順（GitHub Pages）
+検索UIは[サントリー「日本の鳥百科」](https://www.suntory.co.jp/eco/birds/encyclopedia/)の構成(特徴/鳴き声/50音順の3タブ検索)を参考にしていますが、**写真・イラスト・音源はすべて自分で用意したもの**を使う前提です(同サイトの著作物は含まれていません)。
 
-1. GitHub で公開リポジトリを作り、このフォルダの中身をすべて push する
-2. リポジトリの **Settings → Pages → Build and deployment**
-   - Source: `Deploy from a branch`
-   - Branch: `main` / `/ (root)` → Save
-3. 数分後 `https://<ユーザー名>.github.io/<リポジトリ名>/` で開ける
+## 機能
 
-パスはすべて相対指定なので、サブディレクトリ公開でもそのまま動く。
+- フリーワード検索(スペース区切りでAND検索)
+- 特徴で探す(大きさ・色・季節・生息地)
+- 鳴き声で探す(鳴き声タイプ・季節・生息地)
+- 50音順一覧
+- 詳細画面(写真・特徴・鳴き声再生・似ている種へのリンク)
+- ダークモード
+- オフライン対応(PWA。ホーム画面に追加してアプリのように使えます)
+- 撮影記録(「この種を記録する」→ 端末保存 + 任意でGitHubに同期)
 
-## iPhone でオフライン確認
+## セットアップ
 
-1. Safari で公開URLを開く → 共有 → **ホーム画面に追加**
-2. 一度アプリを開いて全種を表示させる（この時点で JSON・画像がキャッシュされる）
-3. 機内モードにして開き直し、一覧・絞り込み・詳細が動けばOK
+### 1. リポジトリとPagesの設定
 
-## 種を追加する
+1. このフォルダの中身をPublicリポジトリにpushする
+2. `Settings → Pages → Build and deployment → Source` を **「GitHub Actions」** にする
+   (ブランチからの配信ではなく、`.github/workflows/deploy.yml` から配信します)
+3. `main` にpushすると自動でビルド・デプロイされます
 
-`birds.json` に 1 オブジェクト追加する。
+### 2. データを揃える
+
+- `birds.json` に種を追加・編集する(スキーマは下記)
+- `images/<id>.jpg` に写真を置く(自分で撮影したもの)
+- 鳴き声の音源がある場合は `audio/<id>.mp3` に置き、`birds.json` の `audio` にパスを設定する
+
+### 3. 撮影記録の同期(任意)
+
+[`bird-log-template`](../bird-log-template) を参照して、Private リポジトリを用意すると、
+撮影記録を複数端末で共有できます。設定しなくてもアプリ自体は動きます。
+
+## birds.json のスキーマ
 
 ```json
 {
-  "id": "hibari",
-  "name": "ヒバリ",
-  "kana": "ひばり",
-  "size": "スズメ大",
-  "colors": ["茶", "白"],
-  "habitat": ["田畑", "草地"],
-  "season": "留鳥",
-  "beak": "細く尖る",
-  "features": "頭に短い冠羽。空高く舞い上がってさえずる",
-  "similar": ["ホオジロ"],
-  "image": "images/hibari.jpg"
+  "id": "suzume",
+  "name": "スズメ",
+  "kana": "すずめ",
+  "row": "サ",
+  "size": "小",
+  "colors": ["茶系", "白系", "黒系"],
+  "seasons": ["春", "夏", "秋", "冬"],
+  "habitats": ["市街・住宅地", "農耕地"],
+  "beak": "太く短い",
+  "voice_type": "単音",
+  "voice_text": "チュンチュン",
+  "audio": null,
+  "features": "頬に黒い斑、頭は茶色",
+  "similar": ["ニュウナイスズメ"],
+  "image": "images/suzume.jpg"
 }
 ```
 
-| 項目 | ルール |
+| 項目 | 選択肢 |
 |---|---|
-| `id` | 英小文字。画像ファイル名と合わせる |
-| `kana` | ひらがな。検索用 |
-| `size` | スズメ大 / ムクドリ大 / ハト大 / カラス大 / それ以上 |
-| `colors` | 茶 / 黒 / 白 / 灰 / 青 / 緑 / 黄 / 赤・橙 |
-| `habitat` | 市街地 / 公園 / 林 / 水辺 / 田畑 / 海岸（河川・池・藪など細かい表記も可。`app.js` の `HABITAT_ALIAS` で6区分にまとめる） |
-| `season` | 留鳥 / 夏鳥 / 冬鳥 / 旅鳥 |
-| `beak` | 細く尖る / 太く短い / 長い / 鉤状 / 平たい |
-| `similar` | 他種の `name`。収録済みなら詳細から飛べる。未収録は灰色表示 |
-| `image` | 無ければ自動で仮画像を表示 |
+| `size` | 特大 / 大 / 中 / 小 |
+| `colors` | 茶系・白系・黒系・赤系・黄系・青系・緑系・灰系(複数可) |
+| `seasons` | 春・夏・秋・冬(複数可) |
+| `habitats` | 市街・住宅地 / 河川・湖沼 / 農耕地 / 海 / 森林 / 草地 / 裸地 / 高山(複数可) |
+| `row` | 50音の行(ア〜ワ)。一覧の並び順・50音検索に使用 |
+| `voice_type` | 単音 / 連続音 / フレーズ / 複雑なメロディ / その他 / `null` |
 
-## 写真を差し替える
-
-`images/<id>.jpg` を置くだけ。4:3 で横 800px 程度に縮小しておくとキャッシュが軽い。
-
-## 更新を反映させる（重要）
-
-`birds.json` や画像を更新したら **`sw.js` の `VERSION` を上げる**（`v1` → `v2`）。上げないと、すでにインストール済みの端末には古いキャッシュが残り続ける。
-
-## 構成
+`scripts/validate_birds.py` で構文・必須項目・表記ゆれをチェックできます(pushすると自動でも走ります)。
 
 ```
-index.html    画面
-style.css     スタイル（ライト/ダーク自動、右上ボタンで手動切替）
-app.js        読み込み・絞り込み・検索・詳細
-birds.json    種データ
-sw.js         Service Worker（オフラインキャッシュ）
-manifest.json PWA設定
-icons/        アプリアイコン
-images/       写真（id.jpg）
+python3 scripts/validate_birds.py
 ```
+
+## スクリプト
+
+| ファイル | 役割 |
+|---|---|
+| `scripts/convert_birds.py` | 旧スキーマ(v1)のbirds.jsonを新スキーマへ変換 |
+| `scripts/validate_birds.py` | birds.jsonの検証(CIでも実行) |
+| `scripts/optimize_images.py` | 画像を1200px+WebPに変換(CIが差分画像に対して自動実行) |
+
+## GitHub Actions
+
+| ワークフロー | トリガー | 内容 |
+|---|---|---|
+| `deploy.yml` | `main` へのpush | birds.json検証 → `sw.js` の VERSION をコミットSHAに書き換え → Pagesへデプロイ |
+| `validate-birds-json.yml` | birds.jsonを触るPR | 検証のみ(マージ前に気づける) |
+| `optimize-images.yml` | `images/**` の変更push | 変更画像だけ1200px+WebPに変換してコミット |
+
+## オフライン動作の確認
+
+1. デプロイ後、iPhoneのSafariで一度アプリを開く(ホーム画面に追加すると尚良い)
+2. 機内モードにしても表示・検索・詳細表示ができることを確認する
+3. `birds.json` や画像を更新してpushした場合、次にオンラインで開いたときに自動で新データがキャッシュされる
+   (`sw.js` のVERSIONがデプロイごとに変わるため、手動でのキャッシュ更新操作は不要)

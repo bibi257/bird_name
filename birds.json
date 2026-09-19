@@ -1,42 +1,1201 @@
 [
-  {"id": "suzume", "name": "スズメ", "kana": "すずめ", "size": "スズメ大", "colors": ["茶", "白", "黒"], "habitat": ["市街地", "田畑", "公園"], "season": "留鳥", "beak": "太く短い", "features": "頬に黒い斑、頭は茶色。日本で最も身近な鳥", "similar": ["ニュウナイスズメ"], "image": "images/suzume.jpg"},
-  {"id": "hashibutogarasu", "name": "ハシブトガラス", "kana": "はしぶとがらす", "size": "カラス大", "colors": ["黒"], "habitat": ["市街地", "林", "公園"], "season": "留鳥", "beak": "太く短い", "features": "くちばしが太く、額が出っ張る。鳴き声は澄んだ「カァカァ」", "similar": ["ハシボソガラス"], "image": "images/hashibutogarasu.jpg"},
-  {"id": "hashibosogarasu", "name": "ハシボソガラス", "kana": "はしぼそがらす", "size": "カラス大", "colors": ["黒"], "habitat": ["田畑", "河川敷", "市街地"], "season": "留鳥", "beak": "細く尖る", "features": "くちばしが細く、額がなだらか。鳴くときお辞儀をする。濁った「ガァガァ」", "similar": ["ハシブトガラス"], "image": "images/hashibosogarasu.jpg"},
-  {"id": "kijibato", "name": "キジバト", "kana": "きじばと", "size": "ハト大", "colors": ["茶", "灰"], "habitat": ["市街地", "林", "公園"], "season": "留鳥", "beak": "細く尖る", "features": "首に青と黒の縞模様。「デデッポッポー」と鳴く", "similar": ["ドバト"], "image": "images/kijibato.jpg"},
-  {"id": "dobato", "name": "ドバト(カワラバト)", "kana": "どばと", "size": "ハト大", "colors": ["灰", "白", "黒"], "habitat": ["市街地", "公園", "駅"], "season": "留鳥", "beak": "細く尖る", "features": "色や模様に個体差が大きい。群れで行動", "similar": ["キジバト"], "image": "images/dobato.jpg"},
-  {"id": "hiyodori", "name": "ヒヨドリ", "kana": "ひよどり", "size": "ムクドリ大", "colors": ["灰", "茶"], "habitat": ["市街地", "林", "公園"], "season": "留鳥", "beak": "細く尖る", "features": "頬が茶色、頭の羽がボサボサ。「ヒーヨヒーヨ」と甲高く鳴く", "similar": ["ムクドリ"], "image": "images/hiyodori.jpg"},
-  {"id": "mukudori", "name": "ムクドリ", "kana": "むくどり", "size": "ムクドリ大", "colors": ["茶", "黒", "白"], "habitat": ["市街地", "田畑", "公園"], "season": "留鳥", "beak": "細く尖る", "features": "くちばしと足が橙色。夕方に大群で集まる", "similar": ["ヒヨドリ"], "image": "images/mukudori.jpg"},
-  {"id": "shijukara", "name": "シジュウカラ", "kana": "しじゅうから", "size": "スズメ大", "colors": ["黒", "白", "灰"], "habitat": ["林", "公園", "市街地"], "season": "留鳥", "beak": "細く尖る", "features": "胸に黒いネクタイ模様。「ツツピー」と鳴く", "similar": ["ヤマガラ", "コガラ"], "image": "images/shijukara.jpg"},
-  {"id": "yamagara", "name": "ヤマガラ", "kana": "やまがら", "size": "スズメ大", "colors": ["茶", "黒", "灰"], "habitat": ["林", "公園"], "season": "留鳥", "beak": "細く尖る", "features": "腹が橙茶色。人をあまり恐れない", "similar": ["シジュウカラ"], "image": "images/yamagara.jpg"},
-  {"id": "mejiro", "name": "メジロ", "kana": "めじろ", "size": "スズメ大", "colors": ["緑", "白"], "habitat": ["林", "公園", "市街地"], "season": "留鳥", "beak": "細く尖る", "features": "目の周りが白い輪。ウグイス色。花の蜜を好む", "similar": ["ウグイス"], "image": "images/mejiro.jpg"},
-  {"id": "uguisu", "name": "ウグイス", "kana": "うぐいす", "size": "スズメ大", "colors": ["茶", "灰"], "habitat": ["林", "藪"], "season": "留鳥", "beak": "細く尖る", "features": "地味な茶褐色。姿より「ホーホケキョ」の声で気づくことが多い", "similar": ["メジロ"], "image": "images/uguisu.jpg"},
-  {"id": "tsubame", "name": "ツバメ", "kana": "つばめ", "size": "スズメ大", "colors": ["黒", "白", "赤・橙"], "habitat": ["市街地", "田畑", "水辺"], "season": "夏鳥", "beak": "細く尖る", "features": "喉が赤、尾が長く二又。飛びながら虫を捕る", "similar": ["イワツバメ", "コシアカツバメ"], "image": "images/tsubame.jpg"},
-  {"id": "kawarahiwa", "name": "カワラヒワ", "kana": "かわらひわ", "size": "スズメ大", "colors": ["緑", "黄", "茶"], "habitat": ["市街地", "田畑", "公園"], "season": "留鳥", "beak": "太く短い", "features": "翼に黄色い帯。「キリリコロロ」と鳴く", "similar": ["マヒワ"], "image": "images/kawarahiwa.jpg"},
-  {"id": "hakusekirei", "name": "ハクセキレイ", "kana": "はくせきれい", "size": "スズメ大", "colors": ["白", "黒", "灰"], "habitat": ["市街地", "水辺", "駐車場"], "season": "留鳥", "beak": "細く尖る", "features": "尾を上下に振りながら歩く。顔が白い", "similar": ["セグロセキレイ"], "image": "images/hakusekirei.jpg"},
-  {"id": "segurosekirei", "name": "セグロセキレイ", "kana": "せぐろせきれい", "size": "スズメ大", "colors": ["黒", "白"], "habitat": ["水辺", "河川敷"], "season": "留鳥", "beak": "細く尖る", "features": "顔が黒く眉だけ白い。日本固有種", "similar": ["ハクセキレイ"], "image": "images/segurosekirei.jpg"},
-  {"id": "kisekirei", "name": "キセキレイ", "kana": "きせきれい", "size": "スズメ大", "colors": ["黄", "灰"], "habitat": ["水辺", "渓流"], "season": "留鳥", "beak": "細く尖る", "features": "腹が鮮やかな黄色、背は灰色", "similar": ["ハクセキレイ"], "image": "images/kisekirei.jpg"},
-  {"id": "mozu", "name": "モズ", "kana": "もず", "size": "スズメ大", "colors": ["茶", "灰", "黒"], "habitat": ["田畑", "林", "公園"], "season": "留鳥", "beak": "鉤状", "features": "目に黒い過眼線。捕らえた獲物を枝に刺す「はやにえ」", "similar": ["アカモズ"], "image": "images/mozu.jpg"},
-  {"id": "joubitaki", "name": "ジョウビタキ", "kana": "じょうびたき", "size": "スズメ大", "colors": ["赤・橙", "灰", "黒"], "habitat": ["市街地", "公園", "田畑"], "season": "冬鳥", "beak": "細く尖る", "features": "オスは腹が橙、頭が銀灰色。翼に白斑。「ヒッヒッ」と鳴く", "similar": ["ルリビタキ"], "image": "images/joubitaki.jpg"},
-  {"id": "tsugumi", "name": "ツグミ", "kana": "つぐみ", "size": "ムクドリ大", "colors": ["茶", "白", "黒"], "habitat": ["公園", "田畑", "芝生"], "season": "冬鳥", "beak": "細く尖る", "features": "胸に黒い斑点。地面を跳ねては胸を張って立ち止まる", "similar": ["シロハラ", "アカハラ"], "image": "images/tsugumi.jpg"},
-  {"id": "shirohara", "name": "シロハラ", "kana": "しろはら", "size": "ムクドリ大", "colors": ["茶", "灰", "白"], "habitat": ["林", "公園"], "season": "冬鳥", "beak": "細く尖る", "features": "腹が白っぽい。落ち葉をひっくり返して餌を探す", "similar": ["ツグミ", "アカハラ"], "image": "images/shirohara.jpg"},
-  {"id": "kogera", "name": "コゲラ", "kana": "こげら", "size": "スズメ大", "colors": ["茶", "白", "黒"], "habitat": ["林", "公園"], "season": "留鳥", "beak": "細く尖る", "features": "日本最小のキツツキ。背に白い横縞。「ギー」と鳴く", "similar": ["アカゲラ"], "image": "images/kogera.jpg"},
-  {"id": "aogera", "name": "アオゲラ", "kana": "あおげら", "size": "ハト大", "colors": ["緑", "赤・橙", "灰"], "habitat": ["林"], "season": "留鳥", "beak": "細く尖る", "features": "背が緑、頭に赤。日本固有種のキツツキ", "similar": ["アカゲラ"], "image": "images/aogera.jpg"},
-  {"id": "enaga", "name": "エナガ", "kana": "えなが", "size": "スズメ大", "colors": ["白", "黒", "茶"], "habitat": ["林", "公園"], "season": "留鳥", "beak": "太く短い", "features": "体が小さく尾が長い。群れで移動。「ジュリジュリ」と鳴く", "similar": ["シジュウカラ"], "image": "images/enaga.jpg"},
-  {"id": "hoojiro", "name": "ホオジロ", "kana": "ほおじろ", "size": "スズメ大", "colors": ["茶", "白", "黒"], "habitat": ["田畑", "草地", "林"], "season": "留鳥", "beak": "太く短い", "features": "頬が白く、顔に黒い模様。木のてっぺんでさえずる", "similar": ["カシラダカ", "アオジ"], "image": "images/hoojiro.jpg"},
-  {"id": "onaga", "name": "オナガ", "kana": "おなが", "size": "ムクドリ大", "colors": ["青", "黒", "白"], "habitat": ["市街地", "公園", "林"], "season": "留鳥", "beak": "細く尖る", "features": "青灰色の長い尾、黒い帽子。「ゲーイゲイ」と鳴く。関東で多い", "similar": ["カケス"], "image": "images/onaga.jpg"},
-  {"id": "kawasemi", "name": "カワセミ", "kana": "かわせみ", "size": "スズメ大", "colors": ["青", "赤・橙"], "habitat": ["水辺", "河川", "池"], "season": "留鳥", "beak": "長い", "features": "背は鮮やかな青、腹は橙。水に飛び込んで魚を捕る", "similar": [], "image": "images/kawasemi.jpg"},
-  {"id": "aosagi", "name": "アオサギ", "kana": "あおさぎ", "size": "それ以上", "colors": ["灰", "白", "黒"], "habitat": ["水辺", "田畑", "河川"], "season": "留鳥", "beak": "長い", "features": "日本最大級のサギ。灰色で首が長い。じっと立って獲物を待つ", "similar": ["ダイサギ"], "image": "images/aosagi.jpg"},
-  {"id": "daisagi", "name": "ダイサギ", "kana": "だいさぎ", "size": "それ以上", "colors": ["白"], "habitat": ["水辺", "田畑", "河川"], "season": "留鳥", "beak": "長い", "features": "全身白で大型。くちばしは夏に黒、冬に黄色", "similar": ["コサギ", "チュウサギ"], "image": "images/daisagi.jpg"},
-  {"id": "kosagi", "name": "コサギ", "kana": "こさぎ", "size": "カラス大", "colors": ["白"], "habitat": ["水辺", "田畑", "河川"], "season": "留鳥", "beak": "長い", "features": "白いサギで小型。くちばしは黒、足指が黄色", "similar": ["ダイサギ", "チュウサギ"], "image": "images/kosagi.jpg"},
-  {"id": "karugamo", "name": "カルガモ", "kana": "かるがも", "size": "それ以上", "colors": ["茶", "黒"], "habitat": ["水辺", "池", "河川"], "season": "留鳥", "beak": "平たい", "features": "くちばし先端が黄色。親子で行列する姿が有名", "similar": ["マガモ"], "image": "images/karugamo.jpg"},
-  {"id": "magamo", "name": "マガモ", "kana": "まがも", "size": "それ以上", "colors": ["緑", "茶", "灰"], "habitat": ["水辺", "池", "河川"], "season": "冬鳥", "beak": "平たい", "features": "オスは頭が光沢のある緑、くちばしが黄色。メスは茶色", "similar": ["カルガモ"], "image": "images/magamo.jpg"},
-  {"id": "ooban", "name": "オオバン", "kana": "おおばん", "size": "カラス大", "colors": ["黒", "白"], "habitat": ["水辺", "池", "河川"], "season": "留鳥", "beak": "細く尖る", "features": "全身黒で額とくちばしが白い", "similar": ["バン"], "image": "images/ooban.jpg"},
-  {"id": "kaitsuburi", "name": "カイツブリ", "kana": "かいつぶり", "size": "ハト大", "colors": ["茶", "黒"], "habitat": ["水辺", "池"], "season": "留鳥", "beak": "細く尖る", "features": "小さく丸い水鳥。よく潜る。「キリリリ」と鳴く", "similar": [], "image": "images/kaitsuburi.jpg"},
-  {"id": "yurikamome", "name": "ユリカモメ", "kana": "ゆりかもめ", "size": "カラス大", "colors": ["白", "灰", "赤・橙"], "habitat": ["水辺", "河川", "海岸"], "season": "冬鳥", "beak": "細く尖る", "features": "くちばしと足が赤い。冬は目の後ろに黒斑", "similar": ["ウミネコ"], "image": "images/yurikamome.jpg"},
-  {"id": "tobi", "name": "トビ", "kana": "とび", "size": "それ以上", "colors": ["茶"], "habitat": ["海岸", "河川", "市街地"], "season": "留鳥", "beak": "鉤状", "features": "最も身近な猛禽。尾が三味線のバチ型。「ピーヒョロロ」", "similar": ["ノスリ"], "image": "images/tobi.jpg"},
-  {"id": "kiji", "name": "キジ", "kana": "きじ", "size": "それ以上", "colors": ["緑", "赤・橙", "茶"], "habitat": ["田畑", "草地", "河川敷"], "season": "留鳥", "beak": "太く短い", "features": "日本の国鳥。オスは顔が赤く体が光沢のある緑。「ケーン」と鳴く", "similar": [], "image": "images/kiji.jpg"},
-  {"id": "kojukei", "name": "コジュケイ", "kana": "こじゅけい", "size": "ハト大", "colors": ["茶", "灰"], "habitat": ["林", "藪", "公園"], "season": "留鳥", "beak": "太く短い", "features": "ずんぐりした体形。「チョットコイ」と聞こえる大声", "similar": [], "image": "images/kojukei.jpg"},
-  {"id": "kakesu", "name": "カケス", "kana": "かけす", "size": "ムクドリ大", "colors": ["茶", "青", "黒", "白"], "habitat": ["林"], "season": "留鳥", "beak": "太く短い", "features": "翼に青と黒の縞模様。「ジェーッ」とだみ声で鳴く", "similar": ["オナガ"], "image": "images/kakesu.jpg"},
-  {"id": "ruribitaki", "name": "ルリビタキ", "kana": "るりびたき", "size": "スズメ大", "colors": ["青", "白", "赤・橙"], "habitat": ["林", "公園"], "season": "冬鳥", "beak": "細く尖る", "features": "オスは背が瑠璃色、脇が橙。人気の高い冬鳥", "similar": ["ジョウビタキ"], "image": "images/ruribitaki.jpg"},
-  {"id": "aoji", "name": "アオジ", "kana": "あおじ", "size": "スズメ大", "colors": ["黄", "緑", "茶"], "habitat": ["林", "藪", "公園"], "season": "冬鳥", "beak": "太く短い", "features": "腹が黄緑色。地面で餌を探す。「チッ」と鳴く", "similar": ["ホオジロ"], "image": "images/aoji.jpg"}
+  {
+    "id": "aogera",
+    "name": "アオゲラ",
+    "kana": "あおげら",
+    "row": "ア",
+    "size": "中",
+    "colors": [
+      "緑系",
+      "赤系",
+      "灰系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "背が緑、頭に赤。日本固有種のキツツキ",
+    "similar": [
+      "アカゲラ"
+    ],
+    "image": "images/aogera.jpg"
+  },
+  {
+    "id": "aosagi",
+    "name": "アオサギ",
+    "kana": "あおさぎ",
+    "row": "ア",
+    "size": "特大",
+    "colors": [
+      "灰系",
+      "白系",
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼",
+      "農耕地"
+    ],
+    "beak": "長い",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "日本最大級のサギ。灰色で首が長い。じっと立って獲物を待つ",
+    "similar": [
+      "ダイサギ"
+    ],
+    "image": "images/aosagi.jpg"
+  },
+  {
+    "id": "aoji",
+    "name": "アオジ",
+    "kana": "あおじ",
+    "row": "ア",
+    "size": "小",
+    "colors": [
+      "黄系",
+      "緑系",
+      "茶系"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "太く短い",
+    "voice_type": "単音",
+    "voice_text": "チッ",
+    "audio": null,
+    "features": "腹が黄緑色。地面で餌を探す。「チッ」と鳴く",
+    "similar": [
+      "ホオジロ"
+    ],
+    "image": "images/aoji.jpg"
+  },
+  {
+    "id": "uguisu",
+    "name": "ウグイス",
+    "kana": "うぐいす",
+    "row": "ア",
+    "size": "小",
+    "colors": [
+      "茶系",
+      "灰系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "フレーズ",
+    "voice_text": "ホーホケキョ",
+    "audio": null,
+    "features": "地味な茶褐色。姿より「ホーホケキョ」の声で気づくことが多い",
+    "similar": [
+      "メジロ"
+    ],
+    "image": "images/uguisu.jpg"
+  },
+  {
+    "id": "enaga",
+    "name": "エナガ",
+    "kana": "えなが",
+    "row": "ア",
+    "size": "小",
+    "colors": [
+      "白系",
+      "黒系",
+      "茶系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "太く短い",
+    "voice_type": "その他",
+    "voice_text": "ジュリジュリ",
+    "audio": null,
+    "features": "体が小さく尾が長い。群れで移動。「ジュリジュリ」と鳴く",
+    "similar": [
+      "シジュウカラ"
+    ],
+    "image": "images/enaga.jpg"
+  },
+  {
+    "id": "ooban",
+    "name": "オオバン",
+    "kana": "おおばん",
+    "row": "ア",
+    "size": "大",
+    "colors": [
+      "黒系",
+      "白系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "全身黒で額とくちばしが白い",
+    "similar": [
+      "バン"
+    ],
+    "image": "images/ooban.jpg"
+  },
+  {
+    "id": "onaga",
+    "name": "オナガ",
+    "kana": "おなが",
+    "row": "ア",
+    "size": "中",
+    "colors": [
+      "青系",
+      "黒系",
+      "白系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "その他",
+    "voice_text": "ゲーイゲイ",
+    "audio": null,
+    "features": "青灰色の長い尾、黒い帽子。「ゲーイゲイ」と鳴く。関東で多い",
+    "similar": [
+      "カケス"
+    ],
+    "image": "images/onaga.jpg"
+  },
+  {
+    "id": "kaitsuburi",
+    "name": "カイツブリ",
+    "kana": "かいつぶり",
+    "row": "カ",
+    "size": "中",
+    "colors": [
+      "茶系",
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "連続音",
+    "voice_text": "キリリリ",
+    "audio": null,
+    "features": "小さく丸い水鳥。よく潜る。「キリリリ」と鳴く",
+    "similar": [],
+    "image": "images/kaitsuburi.jpg"
+  },
+  {
+    "id": "kakesu",
+    "name": "カケス",
+    "kana": "かけす",
+    "row": "カ",
+    "size": "中",
+    "colors": [
+      "茶系",
+      "青系",
+      "黒系",
+      "白系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "森林"
+    ],
+    "beak": "太く短い",
+    "voice_type": "その他",
+    "voice_text": "ジェーッ",
+    "audio": null,
+    "features": "翼に青と黒の縞模様。「ジェーッ」とだみ声で鳴く",
+    "similar": [
+      "オナガ"
+    ],
+    "image": "images/kakesu.jpg"
+  },
+  {
+    "id": "karugamo",
+    "name": "カルガモ",
+    "kana": "かるがも",
+    "row": "カ",
+    "size": "特大",
+    "colors": [
+      "茶系",
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼"
+    ],
+    "beak": "平たい",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "くちばし先端が黄色。親子で行列する姿が有名",
+    "similar": [
+      "マガモ"
+    ],
+    "image": "images/karugamo.jpg"
+  },
+  {
+    "id": "kawasemi",
+    "name": "カワセミ",
+    "kana": "かわせみ",
+    "row": "カ",
+    "size": "小",
+    "colors": [
+      "青系",
+      "赤系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼"
+    ],
+    "beak": "長い",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "背は鮮やかな青、腹は橙。水に飛び込んで魚を捕る",
+    "similar": [],
+    "image": "images/kawasemi.jpg"
+  },
+  {
+    "id": "kawarahiwa",
+    "name": "カワラヒワ",
+    "kana": "かわらひわ",
+    "row": "カ",
+    "size": "小",
+    "colors": [
+      "緑系",
+      "黄系",
+      "茶系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "農耕地"
+    ],
+    "beak": "太く短い",
+    "voice_type": "連続音",
+    "voice_text": "キリリコロロ",
+    "audio": null,
+    "features": "翼に黄色い帯。「キリリコロロ」と鳴く",
+    "similar": [
+      "マヒワ"
+    ],
+    "image": "images/kawarahiwa.jpg"
+  },
+  {
+    "id": "kiji",
+    "name": "キジ",
+    "kana": "きじ",
+    "row": "カ",
+    "size": "特大",
+    "colors": [
+      "緑系",
+      "赤系",
+      "茶系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼",
+      "草地",
+      "農耕地"
+    ],
+    "beak": "太く短い",
+    "voice_type": "単音",
+    "voice_text": "ケーン",
+    "audio": null,
+    "features": "日本の国鳥。オスは顔が赤く体が光沢のある緑。「ケーン」と鳴く",
+    "similar": [],
+    "image": "images/kiji.jpg"
+  },
+  {
+    "id": "kijibato",
+    "name": "キジバト",
+    "kana": "きじばと",
+    "row": "カ",
+    "size": "中",
+    "colors": [
+      "茶系",
+      "灰系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "連続音",
+    "voice_text": "デデッポッポー",
+    "audio": null,
+    "features": "首に青と黒の縞模様。「デデッポッポー」と鳴く",
+    "similar": [
+      "ドバト"
+    ],
+    "image": "images/kijibato.jpg"
+  },
+  {
+    "id": "kisekirei",
+    "name": "キセキレイ",
+    "kana": "きせきれい",
+    "row": "カ",
+    "size": "小",
+    "colors": [
+      "黄系",
+      "灰系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "腹が鮮やかな黄色、背は灰色",
+    "similar": [
+      "ハクセキレイ"
+    ],
+    "image": "images/kisekirei.jpg"
+  },
+  {
+    "id": "kogera",
+    "name": "コゲラ",
+    "kana": "こげら",
+    "row": "カ",
+    "size": "小",
+    "colors": [
+      "茶系",
+      "白系",
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "単音",
+    "voice_text": "ギー",
+    "audio": null,
+    "features": "日本最小のキツツキ。背に白い横縞。「ギー」と鳴く",
+    "similar": [
+      "アカゲラ"
+    ],
+    "image": "images/kogera.jpg"
+  },
+  {
+    "id": "kosagi",
+    "name": "コサギ",
+    "kana": "こさぎ",
+    "row": "カ",
+    "size": "大",
+    "colors": [
+      "白系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼",
+      "農耕地"
+    ],
+    "beak": "長い",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "白いサギで小型。くちばしは黒、足指が黄色",
+    "similar": [
+      "ダイサギ",
+      "チュウサギ"
+    ],
+    "image": "images/kosagi.jpg"
+  },
+  {
+    "id": "kojukei",
+    "name": "コジュケイ",
+    "kana": "こじゅけい",
+    "row": "カ",
+    "size": "中",
+    "colors": [
+      "茶系",
+      "灰系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "太く短い",
+    "voice_type": "その他",
+    "voice_text": "チョットコイ",
+    "audio": null,
+    "features": "ずんぐりした体形。「チョットコイ」と聞こえる大声",
+    "similar": [],
+    "image": "images/kojukei.jpg"
+  },
+  {
+    "id": "shijukara",
+    "name": "シジュウカラ",
+    "kana": "しじゅうから",
+    "row": "サ",
+    "size": "小",
+    "colors": [
+      "黒系",
+      "白系",
+      "灰系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "連続音",
+    "voice_text": "ツツピー",
+    "audio": null,
+    "features": "胸に黒いネクタイ模様。「ツツピー」と鳴く",
+    "similar": [
+      "ヤマガラ",
+      "コガラ"
+    ],
+    "image": "images/shijukara.jpg"
+  },
+  {
+    "id": "shirohara",
+    "name": "シロハラ",
+    "kana": "しろはら",
+    "row": "サ",
+    "size": "中",
+    "colors": [
+      "茶系",
+      "灰系",
+      "白系"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "腹が白っぽい。落ち葉をひっくり返して餌を探す",
+    "similar": [
+      "ツグミ",
+      "アカハラ"
+    ],
+    "image": "images/shirohara.jpg"
+  },
+  {
+    "id": "joubitaki",
+    "name": "ジョウビタキ",
+    "kana": "じょうびたき",
+    "row": "サ",
+    "size": "小",
+    "colors": [
+      "赤系",
+      "灰系",
+      "黒系"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "農耕地"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "その他",
+    "voice_text": "ヒッヒッ",
+    "audio": null,
+    "features": "オスは腹が橙、頭が銀灰色。翼に白斑。「ヒッヒッ」と鳴く",
+    "similar": [
+      "ルリビタキ"
+    ],
+    "image": "images/joubitaki.jpg"
+  },
+  {
+    "id": "suzume",
+    "name": "スズメ",
+    "kana": "すずめ",
+    "row": "サ",
+    "size": "小",
+    "colors": [
+      "茶系",
+      "白系",
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "農耕地"
+    ],
+    "beak": "太く短い",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "頬に黒い斑、頭は茶色。日本で最も身近な鳥",
+    "similar": [
+      "ニュウナイスズメ"
+    ],
+    "image": "images/suzume.jpg"
+  },
+  {
+    "id": "segurosekirei",
+    "name": "セグロセキレイ",
+    "kana": "せぐろせきれい",
+    "row": "サ",
+    "size": "小",
+    "colors": [
+      "黒系",
+      "白系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "顔が黒く眉だけ白い。日本固有種",
+    "similar": [
+      "ハクセキレイ"
+    ],
+    "image": "images/segurosekirei.jpg"
+  },
+  {
+    "id": "daisagi",
+    "name": "ダイサギ",
+    "kana": "だいさぎ",
+    "row": "タ",
+    "size": "特大",
+    "colors": [
+      "白系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼",
+      "農耕地"
+    ],
+    "beak": "長い",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "全身白で大型。くちばしは夏に黒、冬に黄色",
+    "similar": [
+      "コサギ",
+      "チュウサギ"
+    ],
+    "image": "images/daisagi.jpg"
+  },
+  {
+    "id": "tsugumi",
+    "name": "ツグミ",
+    "kana": "つぐみ",
+    "row": "タ",
+    "size": "中",
+    "colors": [
+      "茶系",
+      "白系",
+      "黒系"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "草地",
+      "農耕地"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "胸に黒い斑点。地面を跳ねては胸を張って立ち止まる",
+    "similar": [
+      "シロハラ",
+      "アカハラ"
+    ],
+    "image": "images/tsugumi.jpg"
+  },
+  {
+    "id": "tsubame",
+    "name": "ツバメ",
+    "kana": "つばめ",
+    "row": "タ",
+    "size": "小",
+    "colors": [
+      "黒系",
+      "白系",
+      "赤系"
+    ],
+    "seasons": [
+      "春",
+      "夏"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "河川・湖沼",
+      "農耕地"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "喉が赤、尾が長く二又。飛びながら虫を捕る",
+    "similar": [
+      "イワツバメ",
+      "コシアカツバメ"
+    ],
+    "image": "images/tsubame.jpg"
+  },
+  {
+    "id": "tobi",
+    "name": "トビ",
+    "kana": "とび",
+    "row": "タ",
+    "size": "特大",
+    "colors": [
+      "茶系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "河川・湖沼",
+      "海"
+    ],
+    "beak": "鉤状",
+    "voice_type": "連続音",
+    "voice_text": "ピーヒョロロ",
+    "audio": null,
+    "features": "最も身近な猛禽。尾が三味線のバチ型。「ピーヒョロロ」",
+    "similar": [
+      "ノスリ"
+    ],
+    "image": "images/tobi.jpg"
+  },
+  {
+    "id": "dobato",
+    "name": "ドバト(カワラバト)",
+    "kana": "どばと",
+    "row": "タ",
+    "size": "中",
+    "colors": [
+      "灰系",
+      "白系",
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "色や模様に個体差が大きい。群れで行動",
+    "similar": [
+      "キジバト"
+    ],
+    "image": "images/dobato.jpg"
+  },
+  {
+    "id": "hakusekirei",
+    "name": "ハクセキレイ",
+    "kana": "はくせきれい",
+    "row": "ハ",
+    "size": "小",
+    "colors": [
+      "白系",
+      "黒系",
+      "灰系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "河川・湖沼"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "尾を上下に振りながら歩く。顔が白い",
+    "similar": [
+      "セグロセキレイ"
+    ],
+    "image": "images/hakusekirei.jpg"
+  },
+  {
+    "id": "hashibutogarasu",
+    "name": "ハシブトガラス",
+    "kana": "はしぶとがらす",
+    "row": "ハ",
+    "size": "大",
+    "colors": [
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "太く短い",
+    "voice_type": "その他",
+    "voice_text": "カァカァ",
+    "audio": null,
+    "features": "くちばしが太く、額が出っ張る。鳴き声は澄んだ「カァカァ」",
+    "similar": [
+      "ハシボソガラス"
+    ],
+    "image": "images/hashibutogarasu.jpg"
+  },
+  {
+    "id": "hashibosogarasu",
+    "name": "ハシボソガラス",
+    "kana": "はしぼそがらす",
+    "row": "ハ",
+    "size": "大",
+    "colors": [
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "河川・湖沼",
+      "農耕地"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "その他",
+    "voice_text": "ガァガァ",
+    "audio": null,
+    "features": "くちばしが細く、額がなだらか。鳴くときお辞儀をする。濁った「ガァガァ」",
+    "similar": [
+      "ハシブトガラス"
+    ],
+    "image": "images/hashibosogarasu.jpg"
+  },
+  {
+    "id": "hiyodori",
+    "name": "ヒヨドリ",
+    "kana": "ひよどり",
+    "row": "ハ",
+    "size": "中",
+    "colors": [
+      "灰系",
+      "茶系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": "その他",
+    "voice_text": "ヒーヨヒーヨ",
+    "audio": null,
+    "features": "頬が茶色、頭の羽がボサボサ。「ヒーヨヒーヨ」と甲高く鳴く",
+    "similar": [
+      "ムクドリ"
+    ],
+    "image": "images/hiyodori.jpg"
+  },
+  {
+    "id": "hoojiro",
+    "name": "ホオジロ",
+    "kana": "ほおじろ",
+    "row": "ハ",
+    "size": "小",
+    "colors": [
+      "茶系",
+      "白系",
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "森林",
+      "草地",
+      "農耕地"
+    ],
+    "beak": "太く短い",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "頬が白く、顔に黒い模様。木のてっぺんでさえずる",
+    "similar": [
+      "カシラダカ",
+      "アオジ"
+    ],
+    "image": "images/hoojiro.jpg"
+  },
+  {
+    "id": "magamo",
+    "name": "マガモ",
+    "kana": "まがも",
+    "row": "マ",
+    "size": "特大",
+    "colors": [
+      "緑系",
+      "茶系",
+      "灰系"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼"
+    ],
+    "beak": "平たい",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "オスは頭が光沢のある緑、くちばしが黄色。メスは茶色",
+    "similar": [
+      "カルガモ"
+    ],
+    "image": "images/magamo.jpg"
+  },
+  {
+    "id": "mukudori",
+    "name": "ムクドリ",
+    "kana": "むくどり",
+    "row": "マ",
+    "size": "中",
+    "colors": [
+      "茶系",
+      "黒系",
+      "白系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "農耕地"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "くちばしと足が橙色。夕方に大群で集まる",
+    "similar": [
+      "ヒヨドリ"
+    ],
+    "image": "images/mukudori.jpg"
+  },
+  {
+    "id": "mejiro",
+    "name": "メジロ",
+    "kana": "めじろ",
+    "row": "マ",
+    "size": "小",
+    "colors": [
+      "緑系",
+      "白系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "目の周りが白い輪。ウグイス色。花の蜜を好む",
+    "similar": [
+      "ウグイス"
+    ],
+    "image": "images/mejiro.jpg"
+  },
+  {
+    "id": "mozu",
+    "name": "モズ",
+    "kana": "もず",
+    "row": "マ",
+    "size": "小",
+    "colors": [
+      "茶系",
+      "灰系",
+      "黒系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林",
+      "農耕地"
+    ],
+    "beak": "鉤状",
+    "voice_type": "その他",
+    "voice_text": "はやにえ",
+    "audio": null,
+    "features": "目に黒い過眼線。捕らえた獲物を枝に刺す「はやにえ」",
+    "similar": [
+      "アカモズ"
+    ],
+    "image": "images/mozu.jpg"
+  },
+  {
+    "id": "yamagara",
+    "name": "ヤマガラ",
+    "kana": "やまがら",
+    "row": "ヤ",
+    "size": "小",
+    "colors": [
+      "茶系",
+      "黒系",
+      "灰系"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "腹が橙茶色。人をあまり恐れない",
+    "similar": [
+      "シジュウカラ"
+    ],
+    "image": "images/yamagara.jpg"
+  },
+  {
+    "id": "yurikamome",
+    "name": "ユリカモメ",
+    "kana": "ゆりかもめ",
+    "row": "ヤ",
+    "size": "大",
+    "colors": [
+      "白系",
+      "灰系",
+      "赤系"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "河川・湖沼",
+      "海"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "くちばしと足が赤い。冬は目の後ろに黒斑",
+    "similar": [
+      "ウミネコ"
+    ],
+    "image": "images/yurikamome.jpg"
+  },
+  {
+    "id": "ruribitaki",
+    "name": "ルリビタキ",
+    "kana": "るりびたき",
+    "row": "ラ",
+    "size": "小",
+    "colors": [
+      "青系",
+      "白系",
+      "赤系"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "habitats": [
+      "市街・住宅地",
+      "森林"
+    ],
+    "beak": "細く尖る",
+    "voice_type": null,
+    "voice_text": null,
+    "audio": null,
+    "features": "オスは背が瑠璃色、脇が橙。人気の高い冬鳥",
+    "similar": [
+      "ジョウビタキ"
+    ],
+    "image": "images/ruribitaki.jpg"
+  }
 ]

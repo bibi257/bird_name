@@ -1,85 +1,259 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>野鳥クイックリファレンス</title>
-  <meta name="description" content="大きさ・色・場所・季節・くちばしから野鳥を絞り込む図鑑">
-  <meta name="theme-color" content="#0f1a14" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#eef2ec" media="(prefers-color-scheme: light)">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="野鳥Ref">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <link rel="icon" href="icons/icon-192.png">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>野鳥クイックリファレンス</title>
+<meta name="description" content="大きさ・色・季節・生息地・鳴き声から野鳥を絞り込む図鑑。撮影中にその場で調べられます。">
+<meta name="theme-color" content="#0f1a14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef2ec" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="野鳥Ref">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="top">
-  <h1 class="title">野鳥<span class="title-sub">クイックリファレンス</span></h1>
-  <div class="search-row">
-    <input id="search" type="search" placeholder="名前で探す（すずめ / スズメ）" autocomplete="off" enterkeyhint="search" aria-label="種名で検索">
-    <button id="theme-toggle" class="icon-btn" type="button" aria-label="表示モード切替" title="表示モード切替">
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path class="moon" d="M12 3a9 9 0 1 0 9 9c0-.5 0-1-.1-1.5A6.5 6.5 0 0 1 12.5 3.1 9 9 0 0 0 12 3z" fill="currentColor"/></svg>
-    </button>
+  <div class="top-row">
+    <h1 class="title">野鳥<span class="title-sub">クイックリファレンス</span></h1>
+    <div class="top-actions">
+      <button id="log-toggle" class="icon-btn" type="button" aria-label="撮影記録" title="撮影記録">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 3l-1.5 2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.5L15 3H9zm3 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" fill="currentColor"/></svg>
+      </button>
+      <button id="settings-toggle" class="icon-btn" type="button" aria-label="設定" title="設定">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M19.4 13a7.4 7.4 0 0 0 .06-1 7.4 7.4 0 0 0-.06-1l2.1-1.6a.5.5 0 0 0 .12-.65l-2-3.4a.5.5 0 0 0-.6-.22l-2.5 1a7.6 7.6 0 0 0-1.7-1l-.4-2.6a.5.5 0 0 0-.5-.43h-4a.5.5 0 0 0-.5.43l-.4 2.6a7.6 7.6 0 0 0-1.7 1l-2.5-1a.5.5 0 0 0-.6.22l-2 3.4a.5.5 0 0 0 .12.65L4.6 11a7.4 7.4 0 0 0 0 2l-2.1 1.6a.5.5 0 0 0-.12.65l2 3.4c.13.22.4.31.6.22l2.5-1c.5.4 1.1.75 1.7 1l.4 2.6c.05.25.26.43.5.43h4c.24 0 .45-.18.5-.43l.4-2.6c.6-.25 1.2-.6 1.7-1l2.5 1c.2.09.47 0 .6-.22l2-3.4a.5.5 0 0 0-.12-.65L19.4 13zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z" fill="currentColor"/></svg>
+      </button>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="表示モード切替" title="表示モード切替">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5 0-1-.1-1.5A6.5 6.5 0 0 1 12.5 3.1 9 9 0 0 0 12 3z" fill="currentColor"/></svg>
+      </button>
+    </div>
   </div>
+
+  <div class="search-row">
+    <svg class="search-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z" fill="currentColor"/></svg>
+    <input id="freeword" type="search" placeholder="フリーワードで探す（例：青 水辺）" autocomplete="off" enterkeyhint="search" aria-label="フリーワード検索">
+  </div>
+  <p class="search-hint">スペースで区切るとAND検索になります</p>
+
+  <nav class="tabs" role="tablist" aria-label="検索方法">
+    <button class="tab active" data-tab="feature" role="tab" aria-selected="true">特徴で探す</button>
+    <button class="tab" data-tab="voice" role="tab" aria-selected="false">鳴き声で探す</button>
+    <button class="tab" data-tab="kana" role="tab" aria-selected="false">50音順で探す</button>
+  </nav>
 </header>
 
 <main>
+
+  <!-- ===== タブ1: 特徴で探す ===== -->
+  <section id="panel-feature" class="panel" role="tabpanel">
+    <div class="filters">
+      <div class="filter-row">
+        <span class="filter-label">大きさ</span>
+        <div class="chip-group" data-filter="size" data-mode="single">
+          <button class="chip" data-value="特大">特大</button>
+          <button class="chip" data-value="大">大</button>
+          <button class="chip" data-value="中">中</button>
+          <button class="chip" data-value="小">小</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">主な色<small>複数選択可</small></span>
+        <div class="chip-group" data-filter="colors" data-mode="multi">
+          <button class="chip" data-value="茶系">茶系</button>
+          <button class="chip" data-value="白系">白系</button>
+          <button class="chip" data-value="黒系">黒系</button>
+          <button class="chip" data-value="赤系">赤系</button>
+          <button class="chip" data-value="黄系">黄系</button>
+          <button class="chip" data-value="青系">青系</button>
+          <button class="chip" data-value="緑系">緑系</button>
+          <button class="chip" data-value="灰系">灰系</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">季節<small>複数選択可</small></span>
+        <div class="chip-group" data-filter="seasons" data-mode="multi">
+          <button class="chip" data-value="春">春</button>
+          <button class="chip" data-value="夏">夏</button>
+          <button class="chip" data-value="秋">秋</button>
+          <button class="chip" data-value="冬">冬</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">生息地<small>複数選択可</small></span>
+        <div class="chip-group" data-filter="habitats" data-mode="multi">
+          <button class="chip" data-value="市街・住宅地">市街・住宅地</button>
+          <button class="chip" data-value="河川・湖沼">河川・湖沼</button>
+          <button class="chip" data-value="農耕地">農耕地</button>
+          <button class="chip" data-value="海">海</button>
+          <button class="chip" data-value="森林">森林</button>
+          <button class="chip" data-value="草地">草地</button>
+          <button class="chip" data-value="裸地">裸地</button>
+          <button class="chip" data-value="高山">高山</button>
+        </div>
+      </div>
+      <div class="filter-actions">
+        <button id="feature-search" class="btn-primary" type="button">検索する（<span id="feature-count">0</span>種）</button>
+        <button id="feature-clear" class="btn-ghost" type="button">条件をクリア</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== タブ2: 鳴き声で探す ===== -->
+  <section id="panel-voice" class="panel" role="tabpanel" hidden>
+    <div class="voice-note">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zm5 9a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" fill="currentColor"/></svg>
+      音の再生は、野鳥が仲間の鳴き声と間違うおそれがあるため、屋外での再生はご遠慮ください。イヤホンで聞くか、ボリュームを抑えてご利用ください。
+    </div>
+    <div class="filters">
+      <div class="filter-row">
+        <span class="filter-label">どんな鳴き声<small>複数選択可</small></span>
+        <div class="chip-group" data-filter="voice_type" data-mode="multi" data-scope="voice">
+          <button class="chip" data-value="単音">単音「ジッ、ジッ」など</button>
+          <button class="chip" data-value="連続音">連続音「ポポポポ…」など</button>
+          <button class="chip" data-value="フレーズ">フレーズ「ホーホケキョ」など</button>
+          <button class="chip" data-value="複雑なメロディ">複雑なメロディ</button>
+          <button class="chip" data-value="その他">その他</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">季節<small>複数選択可</small></span>
+        <div class="chip-group" data-filter="seasons" data-mode="multi" data-scope="voice">
+          <button class="chip" data-value="春">春</button>
+          <button class="chip" data-value="夏">夏</button>
+          <button class="chip" data-value="秋">秋</button>
+          <button class="chip" data-value="冬">冬</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">生息地<small>複数選択可</small></span>
+        <div class="chip-group" data-filter="habitats" data-mode="multi" data-scope="voice">
+          <button class="chip" data-value="市街・住宅地">市街・住宅地</button>
+          <button class="chip" data-value="河川・湖沼">河川・湖沼</button>
+          <button class="chip" data-value="農耕地">農耕地</button>
+          <button class="chip" data-value="海">海</button>
+          <button class="chip" data-value="森林">森林</button>
+          <button class="chip" data-value="草地">草地</button>
+          <button class="chip" data-value="裸地">裸地</button>
+          <button class="chip" data-value="高山">高山</button>
+        </div>
+      </div>
+      <div class="filter-actions">
+        <button id="voice-search" class="btn-primary" type="button">検索する（<span id="voice-count">0</span>種）</button>
+        <button id="voice-clear" class="btn-ghost" type="button">条件をクリア</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== タブ3: 50音順 ===== -->
+  <section id="panel-kana" class="panel" role="tabpanel" hidden>
+    <div class="kana-rows" id="kana-rows">
+      <button class="kana-btn" data-row="ア">ア行</button>
+      <button class="kana-btn" data-row="カ">カ行</button>
+      <button class="kana-btn" data-row="サ">サ行</button>
+      <button class="kana-btn" data-row="タ">タ行</button>
+      <button class="kana-btn" data-row="ナ">ナ行</button>
+      <button class="kana-btn" data-row="ハ">ハ行</button>
+      <button class="kana-btn" data-row="マ">マ行</button>
+      <button class="kana-btn" data-row="ヤ">ヤ行</button>
+      <button class="kana-btn" data-row="ラ">ラ行</button>
+      <button class="kana-btn" data-row="ワ">ワ行</button>
+    </div>
+  </section>
+
   <p id="status" class="status" aria-live="polite">読み込み中…</p>
   <section id="grid" class="grid" aria-label="候補一覧"></section>
-  <p id="empty" class="empty" hidden>この条件に合う鳥はありません。<br>条件を減らすか、クリアしてください。</p>
+  <p id="empty" class="empty" hidden>この条件に合う鳥は見つかりませんでした。</p>
+
 </main>
 
-<!-- 片手操作用の下部フィルター -->
-<div id="filter-sheet" class="sheet" data-open="false">
-  <button id="sheet-toggle" class="sheet-handle" type="button" aria-expanded="false" aria-controls="sheet-body">
-    <span class="handle-bar" aria-hidden="true"></span>
-    <span id="sheet-summary" class="handle-text">絞り込み</span>
-    <span id="clear-btn" class="handle-clear" role="button" tabindex="0" hidden>クリア</span>
-  </button>
-  <div id="sheet-body" class="sheet-body">
-    <div class="filter-group" data-key="size">
-      <div class="filter-label">大きさ</div>
-      <div class="chips"></div>
+<!-- ===== 詳細モーダル ===== -->
+<div id="detail-modal" class="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="detail-name">
+    <button class="modal-close" type="button" data-close aria-label="閉じる">×</button>
+    <div class="modal-photo">
+      <img id="detail-img" src="" alt="">
     </div>
-    <div class="filter-group" data-key="colors">
-      <div class="filter-label">色</div>
-      <div class="chips"></div>
-    </div>
-    <div class="filter-group" data-key="habitat">
-      <div class="filter-label">場所</div>
-      <div class="chips"></div>
-    </div>
-    <div class="filter-group" data-key="season">
-      <div class="filter-label">季節</div>
-      <div class="chips"></div>
-    </div>
-    <div class="filter-group" data-key="beak">
-      <div class="filter-label">くちばし</div>
-      <div class="chips"></div>
+    <div class="modal-body">
+      <h2 id="detail-name"></h2>
+      <p id="detail-kana" class="detail-kana"></p>
+      <div class="detail-tags" id="detail-tags"></div>
+      <p id="detail-features" class="detail-features"></p>
+
+      <div id="detail-voice-block" class="detail-block" hidden>
+        <h3>鳴き声</h3>
+        <div class="voice-row">
+          <button id="detail-voice-play" class="btn-voice" type="button" hidden>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            再生
+          </button>
+          <span id="detail-voice-text"></span>
+        </div>
+        <p class="voice-caution">※屋外での再生はご遠慮ください</p>
+        <audio id="detail-audio" preload="none"></audio>
+      </div>
+
+      <div class="detail-block">
+        <h3>特徴</h3>
+        <dl class="detail-dl">
+          <dt>くちばし</dt><dd id="detail-beak"></dd>
+          <dt>季節</dt><dd id="detail-seasons"></dd>
+          <dt>生息地</dt><dd id="detail-habitats"></dd>
+        </dl>
+      </div>
+
+      <div id="detail-similar-block" class="detail-block" hidden>
+        <h3>似ている種</h3>
+        <div id="detail-similar" class="similar-list"></div>
+      </div>
+
+      <button id="log-record-btn" class="btn-primary btn-log" type="button">📷 この種を記録する</button>
     </div>
   </div>
 </div>
 
-<!-- 詳細モーダル -->
-<div id="modal" class="modal" hidden>
+<!-- ===== 撮影記録パネル ===== -->
+<div id="log-modal" class="modal" hidden>
   <div class="modal-backdrop" data-close></div>
-  <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+  <div class="modal-sheet modal-sheet-tall" role="dialog" aria-modal="true">
     <button class="modal-close" type="button" data-close aria-label="閉じる">×</button>
-    <div class="modal-photo"><img id="modal-img" alt=""></div>
     <div class="modal-body">
-      <h2 id="modal-name"></h2>
-      <p id="modal-kana" class="kana"></p>
-      <dl id="modal-attrs" class="attrs"></dl>
-      <h3>特徴</h3>
-      <p id="modal-features"></p>
-      <h3>似ている種</h3>
-      <div id="modal-similar" class="similar"></div>
+      <h2>撮影記録</h2>
+      <p id="log-sync-status" class="sync-status"></p>
+      <div id="log-list" class="log-list"></div>
+      <p id="log-empty" class="empty" hidden>まだ記録がありません。詳細画面の「この種を記録する」から追加できます。</p>
     </div>
-  </article>
+  </div>
+</div>
+
+<!-- ===== 設定パネル(GitHub同期) ===== -->
+<div id="settings-modal" class="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-sheet" role="dialog" aria-modal="true">
+    <button class="modal-close" type="button" data-close aria-label="閉じる">×</button>
+    <div class="modal-body">
+      <h2>設定 — 撮影記録の同期</h2>
+      <p class="settings-desc">撮影記録(log.json)を、あなたのPrivateリポジトリに保存すると、他の端末からも同じ記録を見られます。データはこの端末のブラウザにも保存されるので、設定しなくても使えます。</p>
+
+      <label class="field"><span>Owner</span><input type="text" id="ghOwner" placeholder="GitHubユーザー名" autocomplete="off"></label>
+      <label class="field"><span>Repository</span><input type="text" id="ghRepo" placeholder="例：bird-log" autocomplete="off"></label>
+      <label class="field"><span>Branch</span><input type="text" id="ghBranch" placeholder="main" autocomplete="off"></label>
+      <label class="field"><span>Personal Access Token（Contents: Read and write）</span><input type="password" id="ghToken" placeholder="このリポジトリだけに絞ったトークンを推奨" autocomplete="off"></label>
+      <label class="check-field">
+        <input type="checkbox" id="ghRemember">この端末にトークンを保存して次回から入力を省く
+      </label>
+
+      <div class="filter-actions">
+        <button id="ghSave" class="btn-primary" type="button">保存してGitHubに同期</button>
+        <button id="ghForget" class="btn-ghost" type="button">この端末の設定を削除</button>
+      </div>
+      <p id="ghStatus" class="sync-status"></p>
+    </div>
+  </div>
 </div>
 
 <script src="app.js"></script>
