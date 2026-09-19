@@ -1,0 +1,61 @@
+name: Build & Deploy
+
+# main に push されるたびに実行。
+# 1) birds.json を検証(壊れていたらここで止まり、公開されない)
+# 2) sw.js の VERSION をコミットSHAへ自動書き換え(手動でのVERSION更新は不要)
+# 3) GitHub Pages へデプロイ
+#
+# 事前設定: リポジトリの Settings → Pages → Source を
+#   「GitHub Actions」に変更しておくこと(ブランチ配信ではなくこの workflow から配信する)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: birds.json を検証
+        run: python3 scripts/validate_birds.py
+
+  build-and-deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: sw.js の VERSION をコミットSHAに置き換え
+        run: |
+          SHORT_SHA="${GITHUB_SHA::7}"
+          sed -i "s/__BUILD_VERSION__/${SHORT_SHA}/" sw.js
+          echo "VERSION -> ${SHORT_SHA}"
+
+      - name: 公開用フォルダを作成(scripts/.github などビルドに不要なものは除く)
+        run: |
+          mkdir -p _site
+          rsync -a --exclude 'scripts' --exclude '.github' --exclude '_site' ./ _site/
+          touch _site/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

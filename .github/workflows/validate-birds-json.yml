@@ -1,0 +1,17 @@
+name: Validate birds.json
+
+# birds.json を変更するPull Requestで、構文・必須項目・選択肢の表記ゆれ
+# (「青」と「青系」の混在など)を検証する。壊れたデータが取り込まれる前に気づける。
+
+on:
+  pull_request:
+    paths:
+      - "birds.json"
+      - "scripts/validate_birds.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/validate_birds.py

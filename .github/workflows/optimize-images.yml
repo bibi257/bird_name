@@ -1,0 +1,45 @@
+name: Optimize images
+
+# images/ に画像が追加・更新されたら、長辺1200px+WebPに自動変換して
+# コミットし直す(圏外キャッシュを軽くするため)。GITHUB_TOKENでのpushは
+# 新たなワークフロー実行を発火させないので、無限ループにはならない。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "images/**"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Pillow をインストール
+        run: pip install --quiet Pillow
+
+      - name: 変更された画像ファイルを取得
+        id: changed
+        uses: tj-actions/changed-files@v45
+        with:
+          files: images/**
+
+      - name: 画像を最適化(1200px + WebP)
+        if: steps.changed.outputs.any_changed == 'true'
+        run: python3 scripts/optimize_images.py ${{ steps.changed.outputs.all_changed_files }}
+
+      - name: 変更をコミット
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "images: 自動最適化(1200px / WebP)"
+          file_pattern: "images/** birds.json"
